@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.0)
-include(../Dependencies/Helper.cmake)
 
 # Determine project name from directory - this is required for our android apk builder
 string(REGEX MATCHALL "[^/\\]+$" DEMO_NAME ${CMAKE_CURRENT_LIST_DIR})
@@ -9,6 +8,7 @@ if (NOT DEMO_NAME)
 endif()
 
 project(${DEMO_NAME})
+include(../Dependencies/Helper.cmake)
 
 # Include the framework
 find_package(PVRFramework REQUIRED PATHS "${CMAKE_CURRENT_LIST_DIR}/../Dependencies/Native_SDK/Framework")
