@@ -3,9 +3,9 @@ set(HELPER_DIR ${CMAKE_CURRENT_LIST_DIR})
 
 # Define flags for debug PVRFramework builds
 if(WIN32)
-    set(DEBUG_FLAGS "/DDEBUG /D_CRT_SECURE_NO_WARNINGS /MTd")
-    set(CMAKE_C_FLAGS_DEBUG  ${DEBUG_FLAGS})
-    set(CMAKE_CXX_FLAGS_DEBUG  ${DEBUG_FLAGS})
+    set(DEBUG_FLAGS " /DDEBUG /D_CRT_SECURE_NO_WARNINGS /MTd ")
+    set(CMAKE_C_FLAGS_DEBUG ${CMAKE_C_FLAGS_DEBUG} ${DEBUG_FLAGS})
+    set(CMAKE_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG} ${DEBUG_FLAGS})
 endif()
 
 function(platform_specific_build_and_install)
